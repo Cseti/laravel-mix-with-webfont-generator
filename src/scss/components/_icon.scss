@@ -1,0 +1,50 @@
+//------------------------------
+// This is a generated file DO NOT EDIT!!!!!!!!!!!!!!!!
+//------------------------------
+
+@font-face {
+	font-family: "custom-icons";
+	src: url("/assets/fonts/custom-icons.eot?0609617d2a929614eb1bad09557806e2?#iefix") format("embedded-opentype"),
+url("/assets/fonts/custom-icons.woff2?0609617d2a929614eb1bad09557806e2") format("woff2"),
+url("/assets/fonts/custom-icons.woff?0609617d2a929614eb1bad09557806e2") format("woff");
+}
+
+@if not variable-exists('icons') {
+	$icons: () !global;
+}
+
+$icons: map-merge($icons, (
+    'bug': ('custom-icons' 'f101'),
+));
+
+@mixin icon($name) {
+	line-height: 1;
+	display: inline-block;
+    vertical-align: middle;
+
+	$icon: map-get($icons, $name);
+	&:before {
+		font-family: nth($icon, 1) !important;
+		font-style: normal;
+		font-weight: normal !important;
+		vertical-align: top;
+		content: #{'"\\' + nth($icon, 2) + '"'};
+	}
+}
+
+.icon {
+	line-height: 1;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+.icon:before {
+	font-family: custom-icons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon--bug:before {
+	content: "\f101";
+}

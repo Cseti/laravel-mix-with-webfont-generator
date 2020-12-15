@@ -1,0 +1,32 @@
+{
+    "name": "sitebuilder-template",
+    "version": "2.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "concurrently --kill-others \"node svg-icons.js --watch\" \"npm run development -- --watch\"",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "node svg-icons.js && npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "svg-icons": "node svg-icons.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.26.13",
+        "browser-sync-webpack-plugin": "^2.0.1",
+        "cross-env": "^7.0.2",
+        "laravel-mix": "^5.0.9",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.29.0",
+        "sass-loader": "^8.0.2",
+        "vue-template-compiler": "^2.6.12",
+        "webfonts-generator": "^0.4.0",
+        "concurrently": "^5.3.0",
+        "node-watch": "^0.7.1"
+    },
+    "dependencies": {}
+}
